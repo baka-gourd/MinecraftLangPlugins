@@ -9,14 +9,14 @@ contexts:
   main:
     - comment: 注释
       match: (\/\/.*)|(#.*)
-      scope: comment.line.zs
+      scope: comment.line.lang
 
     - match: /\*
-      scope: comment.block.zs
+      scope: comment.block.lang
       push:
-        - meta_scope: comment.block.zs
+        - meta_scope: comment.block.lang
         - match: \*/
-          scope: comment.block.zs
+          scope: comment.block.lang
           pop: true
 
     - comment: 原名
@@ -36,12 +36,12 @@ contexts:
       scope: entity.name.tag.values.lang
 
     - comment: 专有名词
-      match: (Shift|CTRL|HUD|GUI|Tile Entity|Ctrl|RF|EU|FE|AOE|tile|entity|Dezil|943)
+      match: (Shift|Backspace|CTRL|HUD|GUI|Tile Entity|Ctrl|RF|EU|FE|AOE|tile|entity|Dezil|943|shift|ctrl|Ctrl)
       scope: entity.name.function.values.lang
 
     - comment: 符号
       scope: entity.name.tag.values.lang
-      match: (=|，|。|？|《|》|：|；|‘|’|“|”|-|——|……|、|×|！|\-|\+|\*|\/|\%|\§|\$|\\n|x)
+      match: (=|，|,|.|。|？|《|》|：|；|‘|’|“|”|-|——|……|、|×|！|\-|\+|\*|\/|\%|\§|\$|\\n|x)
 
     - comment: 括号
       scope: entity.name.function.values.lang
