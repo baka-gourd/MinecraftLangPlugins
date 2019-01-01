@@ -19,6 +19,9 @@ contexts:
           scope: comment.block.lang
           pop: true
 
+    - match: "％"
+      scope: invalid.illegal.stray-bracket-end.lang
+
     - comment: 原名
       match: ^[^=]*(?==)
       scope: entity.other.attribute-name.keys.lang
